@@ -34,29 +34,6 @@ public class LOLPositionService {
        return summonerDTO;
     }
 
-
-//    @Scheduled(initialDelay = 5000L, fixedDelay = 2000L)
-//    public void getCurrentWeatherPeriodicallyByCitNamye() {
-//        if(summonerNameList.isEmpty()){
-//            String[] summonerNames = {"hide on bush", "Cuzz", "Gen G Ruler", "KZ Keria"};
-//
-//            if (summonerNameList.isEmpty()) {
-//                for(int i = 0; i < summonerNames.length; i++) {
-//                    SummonerDTO availableSummonerId = this.getSummonerDTO(summonerNames[i]);
-//                    summonerNameList.add(availableSummonerId.getId());
-//                }
-//            }
-//
-//            String summonerId = summonerNameList.pop();
-//            summonerNameList.add(summonerId);
-//            log.info("CurrentWeather has inserted successfully. CurrentWeather : {}", summonerId);
-//            LeaguePositionDTO SummonerPosition = positionInforApiClient.getPositionInfor(summonerId);
-//
-//            LeaguePositionDTO insertedPostion = currentPositionRepository.insertCurrentPositionDB(SummonerPosition);
-//            log.info("CurrentWeather has inserted successfully. CurrentWeather : {}", insertedPostion);
-//        }
-//    }
-
     public Set<LeaguePositionDTO> getCurrentPositionDB(String summonerName){
         SummonerDTO summoerinfor = openSummonerInforApiClient.getSummonerInformation(summonerName);
         String summonerId = summoerinfor.getId();
